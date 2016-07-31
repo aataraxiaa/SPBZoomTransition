@@ -1,0 +1,6 @@
+framework module SPBZoomTransition {
+  umbrella header "SPBZoomTransition-umbrella.h"
+
+  export *
+  module * { export * }
+}

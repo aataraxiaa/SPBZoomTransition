@@ -1,0 +1,27 @@
+PODS:
+  - Kingfisher (2.4.2)
+  - SPBZoomTransition (0.1.0)
+
+DEPENDENCIES:
+  - Kingfisher (from `https://github.com/onevcat/Kingfisher`, branch `swift3`)
+  - SPBZoomTransition (from `../`)
+
+EXTERNAL SOURCES:
+  Kingfisher:
+    :branch: swift3
+    :git: https://github.com/onevcat/Kingfisher
+  SPBZoomTransition:
+    :path: ../
+
+CHECKOUT OPTIONS:
+  Kingfisher:
+    :commit: f4ba0ebeb1bd2f4458fc6fcd9e2c7afc4676992b
+    :git: https://github.com/onevcat/Kingfisher
+
+SPEC CHECKSUMS:
+  Kingfisher: 05bf8d04408aaa70fcd2c8c81b9f1d0f1ad313dd
+  SPBZoomTransition: c639ec18da5520f8c780add646a6de13ef9e591f
+
+PODFILE CHECKSUM: c271ebbe4dbcaa786af2596883318fcd3cc0d6c1
+
+COCOAPODS: 1.0.1
