@@ -105,7 +105,7 @@
         <!--Navigation Controller-->
         <scene sceneID="TDo-Un-0n6">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="gkR-9R-QMr" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="gkR-9R-QMr" customClass="NavigationController" customModule="SPBZoomTransition" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tBm-jg-UQq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>

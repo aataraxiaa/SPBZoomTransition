@@ -52,7 +52,9 @@ typealias CollectionViewDelegate = CollectionViewController
 extension CollectionViewDelegate: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        if let collectionCell = collectionView.cellForItem(at: indexPath) as? CollectionCell {
+            selectedImageView = collectionCell.imageView
+        }
     }
 }
 

@@ -1,3 +1,11 @@
+//
+//  ZoomTransitionSourceDelegate.swift
+//  Pods
+//
+//  Created by Pete Smith on 31/07/2016.
+//
+//
+
 import UIKit
 
 @objc public protocol ZoomTransitionSourceDelegate: NSObjectProtocol {
