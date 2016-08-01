@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11173.2" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gkR-9R-QMr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11173.2" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="x0c-7d-OCt">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11143.2"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -85,11 +85,22 @@
                                     <constraint firstAttribute="width" secondItem="u6Z-Nf-SJJ" secondAttribute="height" id="Dxz-OA-tWj"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9jI-Z6-Vmn">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" red="0.96470588239999999" green="0.51372549020000002" blue="0.46666666670000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="8RS-OE-13Q" kind="unwind" unwindAction="unwindToCollectionViewWithUnwindSegue:" id="GZJ-eI-Gwn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="u6Z-Nf-SJJ" firstAttribute="leading" secondItem="9Ww-qb-5sj" secondAttribute="leading" id="4X6-p3-spH"/>
+                            <constraint firstItem="9jI-Z6-Vmn" firstAttribute="top" secondItem="jnr-Fw-TKV" secondAttribute="bottom" id="5Ro-n0-6GC"/>
                             <constraint firstItem="u6Z-Nf-SJJ" firstAttribute="width" secondItem="9Ww-qb-5sj" secondAttribute="width" id="7Oa-8I-0xk"/>
+                            <constraint firstItem="9jI-Z6-Vmn" firstAttribute="leading" secondItem="9Ww-qb-5sj" secondAttribute="leading" constant="15" id="GmT-TV-ylq"/>
                             <constraint firstItem="u6Z-Nf-SJJ" firstAttribute="top" secondItem="jnr-Fw-TKV" secondAttribute="bottom" id="eOv-Jw-d8E"/>
                             <constraint firstAttribute="trailing" secondItem="u6Z-Nf-SJJ" secondAttribute="trailing" id="rKo-HI-2Es"/>
                         </constraints>
@@ -99,26 +110,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N3i-mI-HJZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="8RS-OE-13Q" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1622" y="-245"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="TDo-Un-0n6">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="gkR-9R-QMr" customClass="NavigationController" customModule="SPBZoomTransition" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tBm-jg-UQq">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="x0c-7d-OCt" kind="relationship" relationship="rootViewController" id="ecD-51-Prw"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="u8h-KY-VW3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="113" y="-245"/>
         </scene>
     </scenes>
 </document>

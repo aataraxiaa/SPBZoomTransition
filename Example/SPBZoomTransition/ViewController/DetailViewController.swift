@@ -76,31 +76,44 @@ extension TableDatasource: UITableViewDataSource {
     }
 }
 
-private typealias DestinationTransitionDelegate = DetailViewController
-extension DestinationTransitionDelegate: ZoomTransitionDestinationDelegate {
+//private typealias DestinationTransitionDelegate = DetailViewController
+//extension DestinationTransitionDelegate: ZoomTransitionDestinationDelegate {
+//    
+//    func transitionDestinationImageViewFrame(forward: Bool) -> CGRect {
+//        if forward {
+//            let x: CGFloat = 0.0
+//            let y = topLayoutGuide.length
+//            let width = view.frame.width
+//            let height = width * 2.0 / 3.0
+//            return CGRect(x: x, y: y, width: width, height: height)
+//        } else {
+//            return imageView.convert(imageView.bounds, to: view)
+//        }
+//    }
+//    
+//    func transitionDestinationWillBegin() {
+//        imageView.isHidden = true
+//    }
+//    
+//    func transitionDestinationDidEnd(transitioningImageView imageView: UIImageView) {
+//        self.imageView.isHidden = false
+//        self.imageView.image = imageView.image
+//    }
+//    
+//    func transitionDestinationDidCancel() {
+//        imageView.isHidden = false
+//    }
+//}
+
+typealias ZoomDestinationDelegate = DetailViewController
+extension ZoomDestinationDelegate: ZoomAnimatorDestinationDelegate {
     
-    func transitionDestinationImageViewFrame(forward: Bool) -> CGRect {
-        if forward {
-            let x: CGFloat = 0.0
-            let y = topLayoutGuide.length
-            let width = view.frame.width
-            let height = width * 2.0 / 3.0
-            return CGRect(x: x, y: y, width: width, height: height)
-        } else {
+    func destinationFrame(direction: TransitionDirection) -> CGRect {
+        switch direction {
+        case .forward:
+            return CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.width)
+        case .back:
             return imageView.convert(imageView.bounds, to: view)
         }
-    }
-    
-    func transitionDestinationWillBegin() {
-        imageView.isHidden = true
-    }
-    
-    func transitionDestinationDidEnd(transitioningImageView imageView: UIImageView) {
-        self.imageView.isHidden = false
-        self.imageView.image = imageView.image
-    }
-    
-    func transitionDestinationDidCancel() {
-        imageView.isHidden = false
     }
 }

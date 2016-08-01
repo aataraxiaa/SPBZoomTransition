@@ -20,6 +20,7 @@ class CollectionViewController: UIViewController {
     
     // MARK: - Properties (Private)
     private var selectedImageView: UIImageView!
+    private lazy var zoomAnimator = ZoomAnimator()
     
     // MARK: - IBOutlets
     @IBOutlet weak var collectionView: UICollectionView!
@@ -27,12 +28,12 @@ class CollectionViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        zoomAnimator.sourceDelegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        // Get stuff
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,8 +44,14 @@ class CollectionViewController: UIViewController {
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) { // let navViewController = segue.destinationViewController as? UINavigationController,
         if let detailViewController = segue.destinationViewController as? DetailViewController, let collectionCell = sender as? CollectionCell, let image = collectionCell.imageView.image {
+            zoomAnimator.destinationDelegate = detailViewController
+            detailViewController.transitioningDelegate = self
             detailViewController.image = image
         }
+    }
+    
+    @IBAction func unwindToCollectionView(unwindSegue: UIStoryboardSegue) {
+    
     }
 }
 
@@ -89,26 +96,29 @@ extension FlowLayoutDelegate: UICollectionViewDelegateFlowLayout {
     }
 }
 
-private typealias TransitionSourceDelegate = CollectionViewController
-extension TransitionSourceDelegate: ZoomTransitionSourceDelegate {
+private typealias TransitionDelegate = CollectionViewController
+extension TransitionDelegate: UIViewControllerTransitioningDelegate {
     
-    func transitionSourceImageView() -> UIImageView {
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return zoomAnimator
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return zoomAnimator
+    }
+}
+
+private typealias ZoomSourceDelegate = CollectionViewController
+extension ZoomSourceDelegate: ZoomAnimatorSourceDelegate {
+    
+    func sourceView(direction: TransitionDirection) -> UIView {
+//        switch direction {
+//        case .forward:
+//            return selectedImageView.convert(selectedImageView.bounds, to: view)
+//        case .back:
+//            return selectedImageView.convert(selectedImageView.bounds, to: view)
+//        }
+        
         return selectedImageView
-    }
-    
-    func transitionSourceImageViewFrame(forward: Bool) -> CGRect {
-        return selectedImageView.convert(selectedImageView.bounds, to: view)
-    }
-    
-    func transitionSourceWillBegin() {
-        selectedImageView.isHidden = true
-    }
-    
-    func transitionSourceDidEnd() {
-        selectedImageView.isHidden = false
-    }
-    
-    func transitionSourceDidCancel() {
-        selectedImageView.isHidden = false
     }
 }

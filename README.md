@@ -1,6 +1,6 @@
 # SPBZoomTransition
 
-[![CI Status](http://img.shields.io/travis/Pete Smith/SPBZoomTransition.svg?style=flat)](https://travis-ci.org/Pete Smith/SPBZoomTransition)
+[![CI Status](http://img.shields.io/travis/superpeteblaze/SPBZoomTransition.svg?style=flat)](https://travis-ci.org/superpeteblaze/SPBZoomTransition)
 [![Version](https://img.shields.io/cocoapods/v/SPBZoomTransition.svg?style=flat)](http://cocoapods.org/pods/SPBZoomTransition)
 [![License](https://img.shields.io/cocoapods/l/SPBZoomTransition.svg?style=flat)](http://cocoapods.org/pods/SPBZoomTransition)
 [![Platform](https://img.shields.io/cocoapods/p/SPBZoomTransition.svg?style=flat)](http://cocoapods.org/pods/SPBZoomTransition)

@@ -7,31 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		023E1F753A143A178BC2722DD772F7B9 /* ZoomTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA4BEF159F83B7AABB03D97B8BA2361 /* ZoomTransitioning.swift */; };
-		2A12565029E44F44FB66D052DDEBAEB4 /* ZoomTransitionDestinationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F3F0CF4FF9F25DF9942225827F2106 /* ZoomTransitionDestinationDelegate.swift */; };
 		310A90FDC7A4108847C8DB448296EC9B /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = D499434C2445A6D131CAD3B53CA034EF /* Image.swift */; };
 		32ABD43D364C9C8FCCE029D04D09209E /* UIButton+Kingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926689AF2AC93193219D12354791BB0A /* UIButton+Kingfisher.swift */; };
 		32B2E0122A21EB291401DAA46628CD78 /* SPBZoomTransition-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EFA1F801C8FB1EA97E016AAB3E40AC1A /* SPBZoomTransition-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3E8FB8F421EF490807B09EFBA62FD286 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A38C9AD9B0754CC053F5D7C700DD795 /* ImageCache.swift */; };
 		3FB4A1460429FE7B4C0E397309BCBCDF /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D39F10C4F726EC2E2D0021E2568412 /* Resource.swift */; };
 		432E087D0FB7BBBD518A79702D51B5A7 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 232CC40B6BDED99579A8A76AF55C1F9B /* CFNetwork.framework */; };
-		53004937B67555705F7973EA3B036F54 /* ZoomNavigationControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64762C38BDA596E670FFD74A401286EF /* ZoomNavigationControllerDelegate.swift */; };
 		64838934323F6E2F0E4FAA8531DA62A8 /* Kingfisher-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E642DC9F7BD7A4748F2E1558F3034F73 /* Kingfisher-dummy.m */; };
-		6528819E1D4E5770006587F3 /* ZoomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6528819C1D4E56DE006587F3 /* ZoomNavigationController.swift */; };
+		65648E231D4F535000BA6B17 /* ZoomAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65648E221D4F535000BA6B17 /* ZoomAnimator.swift */; };
+		65AEBBDC1D4F7B5500605A35 /* ZoomTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AEBBDB1D4F7B5500605A35 /* ZoomTransition.swift */; };
 		72E1B5591824D32038BD38C0A1A0090C /* ImagePrefetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2D339252A758D0403A0CAA0A130BA6 /* ImagePrefetcher.swift */; };
 		841AF3229990A74085C9EA1595715634 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC4DC3D8EFEFCB57DD743BA66A83A5F6 /* Foundation.framework */; };
-		842395DF5FB0BBF9331D4A51E5CA5CFC /* ZoomInteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CB068B19CE0021DDFFB0ED2741C03E /* ZoomInteractiveTransition.swift */; };
 		88943828130EC05038E5652BBF9F9969 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC4DC3D8EFEFCB57DD743BA66A83A5F6 /* Foundation.framework */; };
 		8B24ECCCF1CD0B0AEE746EC3F915DD2A /* ImageView+Kingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997698CFECB4FA0374E9DCE87BE69143 /* ImageView+Kingfisher.swift */; };
 		8D6EB71EE2AEA8489F637885823A04B9 /* Pods-SPBZoomTransition_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 146CE4B3DB971A04EDB812E084C77C4A /* Pods-SPBZoomTransition_Tests-dummy.m */; };
-		924283CA29C2C004F99EEAEB4BBD36B7 /* ZoomTransitionSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66934DBD9849AF7A9D9ADEC9C8FD18C4 /* ZoomTransitionSourceDelegate.swift */; };
 		92B58E5A6CBE8D8BE77252C768AE4CCF /* KingfisherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127E27D322B916F140A78AD1BE71EA31 /* KingfisherManager.swift */; };
 		92E17B92BF9702D45FC1F1836DF29AFC /* Pods-SPBZoomTransition_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0EEEDBF596B05D16B7564C2316CB3D04 /* Pods-SPBZoomTransition_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		955785330721A1DFC7DAF64CAFE82711 /* Pods-SPBZoomTransition_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D48E5F16101892E24249B5581A8302AA /* Pods-SPBZoomTransition_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9567294B3163F26B82541F05433A355E /* Kingfisher-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C01EBC90201414A5B21FAB55D79F336 /* Kingfisher-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9C66E71E39965349D16D84946D52B074 /* ThreadHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A465B870F7E50E381295CF377CC935AB /* ThreadHelper.swift */; };
 		B269CF8D2FE78AB70482D446509BC26D /* KingfisherOptionsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED96B7665527B0BDA27F6EAA25ED8CF5 /* KingfisherOptionsInfo.swift */; };
-		B4A49C48636C8FD9B04C4A602E38FCE2 /* UIImageView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD4517BA43BD526B5F8C8ED754F0846 /* UIImageView+extension.swift */; };
 		CEC7C23226EA400A86338DC8BB6D8B42 /* ImageTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3719D66E0E7937368BC3E102CE7E432B /* ImageTransition.swift */; };
 		D2DA661DAC321C3CD4E3FD7B82625926 /* String+MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B198BF7659D1B236780664E7F6D25 /* String+MD5.swift */; };
 		E170CD6AABB3FD64A0E67869BC754CAE /* Kingfisher.h in Headers */ = {isa = PBXBuildFile; fileRef = C90604F19CEB7828FB3111875C5A7D04 /* Kingfisher.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -64,7 +59,6 @@
 		02FE47A1D9F5F43E723892581F70F765 /* Pods_SPBZoomTransition_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SPBZoomTransition_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0854B4F1370CC50C4635F7A020294F8C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A38C9AD9B0754CC053F5D7C700DD795 /* ImageCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageCache.swift; path = Sources/ImageCache.swift; sourceTree = "<group>"; };
-		0BD4517BA43BD526B5F8C8ED754F0846 /* UIImageView+extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIImageView+extension.swift"; sourceTree = "<group>"; };
 		0EEEDBF596B05D16B7564C2316CB3D04 /* Pods-SPBZoomTransition_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SPBZoomTransition_Tests-umbrella.h"; sourceTree = "<group>"; };
 		127E27D322B916F140A78AD1BE71EA31 /* KingfisherManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KingfisherManager.swift; path = Sources/KingfisherManager.swift; sourceTree = "<group>"; };
 		146CE4B3DB971A04EDB812E084C77C4A /* Pods-SPBZoomTransition_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SPBZoomTransition_Tests-dummy.m"; sourceTree = "<group>"; };
@@ -78,10 +72,9 @@
 		3D144BAF3383FE5F700D62DD8B1DE877 /* SPBZoomTransition.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SPBZoomTransition.modulemap; sourceTree = "<group>"; };
 		58D306C99A953952DDC15CDCD615D57A /* Pods-SPBZoomTransition_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SPBZoomTransition_Example-dummy.m"; sourceTree = "<group>"; };
 		5C01EBC90201414A5B21FAB55D79F336 /* Kingfisher-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Kingfisher-umbrella.h"; sourceTree = "<group>"; };
-		64762C38BDA596E670FFD74A401286EF /* ZoomNavigationControllerDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ZoomNavigationControllerDelegate.swift; sourceTree = "<group>"; };
 		6491F7B8725DEDCD002A554C9A576931 /* Pods-SPBZoomTransition_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-SPBZoomTransition_Tests.modulemap"; sourceTree = "<group>"; };
-		6528819C1D4E56DE006587F3 /* ZoomNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomNavigationController.swift; sourceTree = "<group>"; };
-		66934DBD9849AF7A9D9ADEC9C8FD18C4 /* ZoomTransitionSourceDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ZoomTransitionSourceDelegate.swift; sourceTree = "<group>"; };
+		65648E221D4F535000BA6B17 /* ZoomAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomAnimator.swift; sourceTree = "<group>"; };
+		65AEBBDB1D4F7B5500605A35 /* ZoomTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomTransition.swift; sourceTree = "<group>"; };
 		66C160A77D19C3E7426E752ECEFD1F48 /* Pods-SPBZoomTransition_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SPBZoomTransition_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		6A55C174B60897C867FEC0C37627717F /* Pods-SPBZoomTransition_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SPBZoomTransition_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		6C4E79E20C44367C2A4F62114273D2A2 /* Kingfisher.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Kingfisher.xcconfig; sourceTree = "<group>"; };
@@ -104,10 +97,8 @@
 		BE15CE6F8ECC805205F902B638571D88 /* Pods-SPBZoomTransition_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SPBZoomTransition_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		C137D4078DE89F19CC14D31341E311B2 /* Pods-SPBZoomTransition_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SPBZoomTransition_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		C1930E72952B1420DD2C2A22C3D71AE0 /* Pods-SPBZoomTransition_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SPBZoomTransition_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		C1F3F0CF4FF9F25DF9942225827F2106 /* ZoomTransitionDestinationDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ZoomTransitionDestinationDelegate.swift; sourceTree = "<group>"; };
 		C90604F19CEB7828FB3111875C5A7D04 /* Kingfisher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Kingfisher.h; path = Sources/Kingfisher.h; sourceTree = "<group>"; };
 		CD10620F3EA68BB7E9E9D260F96C882F /* SPBZoomTransition-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SPBZoomTransition-prefix.pch"; sourceTree = "<group>"; };
-		CDA4BEF159F83B7AABB03D97B8BA2361 /* ZoomTransitioning.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ZoomTransitioning.swift; sourceTree = "<group>"; };
 		D1EE5992DAFE9E061CA158EF3FDFA22D /* Pods-SPBZoomTransition_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SPBZoomTransition_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		D2CE427012BA748C04C7ADCA7E0F0593 /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D48E5F16101892E24249B5581A8302AA /* Pods-SPBZoomTransition_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SPBZoomTransition_Example-umbrella.h"; sourceTree = "<group>"; };
@@ -118,7 +109,6 @@
 		EFA1F801C8FB1EA97E016AAB3E40AC1A /* SPBZoomTransition-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SPBZoomTransition-umbrella.h"; sourceTree = "<group>"; };
 		F7D39F10C4F726EC2E2D0021E2568412 /* Resource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Resource.swift; path = Sources/Resource.swift; sourceTree = "<group>"; };
 		F9331101308E2110E079154E1C369AE9 /* Pods-SPBZoomTransition_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-SPBZoomTransition_Example.modulemap"; sourceTree = "<group>"; };
-		F9CB068B19CE0021DDFFB0ED2741C03E /* ZoomInteractiveTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ZoomInteractiveTransition.swift; sourceTree = "<group>"; };
 		FAB5F3ECF8E187D6141AB1F83FA0B173 /* SPBZoomTransition-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SPBZoomTransition-dummy.m"; sourceTree = "<group>"; };
 		FD3B198BF7659D1B236780664E7F6D25 /* String+MD5.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+MD5.swift"; path = "Sources/String+MD5.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -274,13 +264,8 @@
 		AE069EB940428DD5DBF244EBF27681EB /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				0BD4517BA43BD526B5F8C8ED754F0846 /* UIImageView+extension.swift */,
-				F9CB068B19CE0021DDFFB0ED2741C03E /* ZoomInteractiveTransition.swift */,
-				64762C38BDA596E670FFD74A401286EF /* ZoomNavigationControllerDelegate.swift */,
-				C1F3F0CF4FF9F25DF9942225827F2106 /* ZoomTransitionDestinationDelegate.swift */,
-				CDA4BEF159F83B7AABB03D97B8BA2361 /* ZoomTransitioning.swift */,
-				66934DBD9849AF7A9D9ADEC9C8FD18C4 /* ZoomTransitionSourceDelegate.swift */,
-				6528819C1D4E56DE006587F3 /* ZoomNavigationController.swift */,
+				65648E221D4F535000BA6B17 /* ZoomAnimator.swift */,
+				65AEBBDB1D4F7B5500605A35 /* ZoomTransition.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -503,13 +488,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE6229205EA3450FF9943F0034468465 /* SPBZoomTransition-dummy.m in Sources */,
-				B4A49C48636C8FD9B04C4A602E38FCE2 /* UIImageView+extension.swift in Sources */,
-				6528819E1D4E5770006587F3 /* ZoomNavigationController.swift in Sources */,
-				842395DF5FB0BBF9331D4A51E5CA5CFC /* ZoomInteractiveTransition.swift in Sources */,
-				53004937B67555705F7973EA3B036F54 /* ZoomNavigationControllerDelegate.swift in Sources */,
-				2A12565029E44F44FB66D052DDEBAEB4 /* ZoomTransitionDestinationDelegate.swift in Sources */,
-				023E1F753A143A178BC2722DD772F7B9 /* ZoomTransitioning.swift in Sources */,
-				924283CA29C2C004F99EEAEB4BBD36B7 /* ZoomTransitionSourceDelegate.swift in Sources */,
+				65648E231D4F535000BA6B17 /* ZoomAnimator.swift in Sources */,
+				65AEBBDC1D4F7B5500605A35 /* ZoomTransition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
