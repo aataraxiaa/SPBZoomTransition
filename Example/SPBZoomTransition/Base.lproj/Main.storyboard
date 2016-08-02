@@ -91,7 +91,7 @@
                                     <color key="titleColor" red="0.96470588239999999" green="0.51372549020000002" blue="0.46666666670000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="8RS-OE-13Q" kind="unwind" unwindAction="unwindToCollectionViewWithUnwindSegue:" id="GZJ-eI-Gwn"/>
+                                    <segue destination="8RS-OE-13Q" kind="unwind" unwindAction="unwindToCollectionViewWithUnwindSegue:" id="ohJ-7d-p5Z"/>
                                 </connections>
                             </button>
                         </subviews>

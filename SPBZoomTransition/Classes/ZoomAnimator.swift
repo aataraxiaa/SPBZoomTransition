@@ -53,22 +53,35 @@ final public class ZoomAnimator: NSObject, UIViewControllerAnimatedTransitioning
     }
     
     public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
-        let animationContainer = transitionContext.containerView()
-        
-        if let destinationView = transitionContext.view(forKey: UITransitionContextToViewKey), let sourceView = sourceDelegate?.sourceView(direction: transitionDirection), let destinationFrame = destinationDelegate?.destinationFrame(direction: transitionDirection) {
-            
-            let xScaleFactor = sourceView.frame.width/destinationFrame.width
-            let yScaleFactor = sourceView.frame.height/destinationFrame.height
-            
-            let scaleTransForm = CGAffineTransform(scaleX: xScaleFactor, y: yScaleFactor)
-            
-            animationContainer.addSubview(destinationView)
-            animationContainer.bringSubview(toFront: destinationView)
-            
-            UIView.animate(withDuration: duration, animations: {
-                sourceView.transform = scaleTransForm
-            }, completion: { _ in })
+        guard let sourceView = sourceDelegate?.sourceView(direction: transitionDirection),
+            let destinationView = transitionContext.view(forKey: UITransitionContextToViewKey), let destinationFrame = destinationDelegate?.destinationFrame(direction: transitionDirection) else {
+                transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
+                return
         }
+        
+        let transitionContainer = transitionContext.containerView()
+        
+        //transitionContainer.insertSubview(destinationView, belowSubview: sourceView)
+        
+        sourceDelegate?.transitionWillBegin(direction: transitionDirection)
+        destinationDelegate?.transitionWillBegin(direction: transitionDirection)
+        
+        UIView.animate(
+            withDuration: duration,
+            delay: 0.0,
+            options: .curveEaseOut,
+            animations: {
+                sourceView.frame = destinationFrame
+            },
+            completion: { _ in
+                sourceView.removeFromSuperview()
+                
+                self.sourceDelegate?.transitionDidEnd(direction: self.transitionDirection)
+                self.destinationDelegate?.transitionDidEnd(direction: self.transitionDirection)
+                
+                let completed = !transitionContext.transitionWasCancelled()
+                transitionContext.completeTransition(completed)
+        })
         
         switch transitionDirection {
         case .forward:

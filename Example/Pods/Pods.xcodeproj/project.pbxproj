@@ -15,7 +15,6 @@
 		432E087D0FB7BBBD518A79702D51B5A7 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 232CC40B6BDED99579A8A76AF55C1F9B /* CFNetwork.framework */; };
 		64838934323F6E2F0E4FAA8531DA62A8 /* Kingfisher-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E642DC9F7BD7A4748F2E1558F3034F73 /* Kingfisher-dummy.m */; };
 		65648E231D4F535000BA6B17 /* ZoomAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65648E221D4F535000BA6B17 /* ZoomAnimator.swift */; };
-		65AEBBDC1D4F7B5500605A35 /* ZoomTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AEBBDB1D4F7B5500605A35 /* ZoomTransition.swift */; };
 		72E1B5591824D32038BD38C0A1A0090C /* ImagePrefetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2D339252A758D0403A0CAA0A130BA6 /* ImagePrefetcher.swift */; };
 		841AF3229990A74085C9EA1595715634 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC4DC3D8EFEFCB57DD743BA66A83A5F6 /* Foundation.framework */; };
 		88943828130EC05038E5652BBF9F9969 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC4DC3D8EFEFCB57DD743BA66A83A5F6 /* Foundation.framework */; };
@@ -74,7 +73,6 @@
 		5C01EBC90201414A5B21FAB55D79F336 /* Kingfisher-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Kingfisher-umbrella.h"; sourceTree = "<group>"; };
 		6491F7B8725DEDCD002A554C9A576931 /* Pods-SPBZoomTransition_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-SPBZoomTransition_Tests.modulemap"; sourceTree = "<group>"; };
 		65648E221D4F535000BA6B17 /* ZoomAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomAnimator.swift; sourceTree = "<group>"; };
-		65AEBBDB1D4F7B5500605A35 /* ZoomTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomTransition.swift; sourceTree = "<group>"; };
 		66C160A77D19C3E7426E752ECEFD1F48 /* Pods-SPBZoomTransition_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SPBZoomTransition_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		6A55C174B60897C867FEC0C37627717F /* Pods-SPBZoomTransition_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SPBZoomTransition_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		6C4E79E20C44367C2A4F62114273D2A2 /* Kingfisher.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Kingfisher.xcconfig; sourceTree = "<group>"; };
@@ -265,7 +263,6 @@
 			isa = PBXGroup;
 			children = (
 				65648E221D4F535000BA6B17 /* ZoomAnimator.swift */,
-				65AEBBDB1D4F7B5500605A35 /* ZoomTransition.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -489,7 +486,6 @@
 			files = (
 				EE6229205EA3450FF9943F0034468465 /* SPBZoomTransition-dummy.m in Sources */,
 				65648E231D4F535000BA6B17 /* ZoomAnimator.swift in Sources */,
-				65AEBBDC1D4F7B5500605A35 /* ZoomTransition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
