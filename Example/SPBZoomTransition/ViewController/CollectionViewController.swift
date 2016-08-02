@@ -43,7 +43,7 @@ class CollectionViewController: UIViewController {
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) { // let navViewController = segue.destinationViewController as? UINavigationController,
-        if let detailViewController = segue.destinationViewController as? DetailViewController, let collectionCell = sender as? CollectionCell, let image = collectionCell.imageView.image {
+        if let detailViewController = segue.destination as? DetailViewController, let collectionCell = sender as? CollectionCell, let image = collectionCell.imageView.image {
             zoomAnimator.destinationDelegate = detailViewController
             detailViewController.transitioningDelegate = self
             detailViewController.image = image

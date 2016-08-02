@@ -73,7 +73,7 @@ public enum CacheType {
 public class ImageCache {
 
     //Memory
-    private let memoryCache = Cache<NSString, AnyObject>()
+    private let memoryCache = NSCache<NSString, AnyObject>()
     
     /// The largest cache cost of memory cache. The total cost is pixel count of all cached images in memory.
     public var maxMemoryCost: UInt = 0 {
@@ -123,8 +123,8 @@ public class ImageCache {
         let dstPath = path ?? NSSearchPathForDirectoriesInDomains(.cachesDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).first!
         diskCachePath = (dstPath as NSString).appendingPathComponent(cacheName)
         
-        ioQueue = DispatchQueue(label: ioQueueName + name, attributes: DispatchQueueAttributes.serial)
-        processQueue = DispatchQueue(label: processQueueName + name, attributes: DispatchQueueAttributes.concurrent)
+        ioQueue = DispatchQueue(label: ioQueueName + name, attributes: DispatchQueue.Attributes.concurrent)
+        processQueue = DispatchQueue(label: processQueueName + name, attributes: DispatchQueue.Attributes.concurrent)
         
         ioQueue.sync(execute: { () -> Void in
             self.fileManager = FileManager()
@@ -178,10 +178,10 @@ extension ImageCache {
                 
                 let data: Data?
                 switch imageFormat {
-                case .png: data = originalData ?? ImagePNGRepresentation(image)
-                case .jpeg: data = originalData ?? ImageJPEGRepresentation(image, 1.0)
-                case .gif: data = originalData ?? ImageGIFRepresentation(image)
-                case .unknown: data = originalData ?? ImagePNGRepresentation(image.kf_normalizedImage())
+                case .PNG: data = originalData ?? image.pngRepresentation()
+                case .JPEG: data = originalData ?? image.jpegRepresentation(compressionQuality: 1.0)
+                case .GIF: data = originalData ?? image.gifRepresentation()
+                case .unknown: data = originalData ?? image.kf_normalizedImage().pngRepresentation()
                 }
                 
                 if let data = data {
@@ -264,7 +264,7 @@ extension ImageCache {
                 if let image = sSelf.retrieveImageInDiskCacheForKey(key, scale: options.scaleFactor, preloadAllGIFData: options.preloadAllGIFData) {
                     if options.backgroundDecode {
                         sSelf.processQueue.async(execute: { () -> Void in
-                            let result = image.kf_decodedImage(options.scaleFactor)
+                            let result = image.kf_decodedImage(scale: options.scaleFactor)
                             sSelf.storeImage(result!, forKey: key, toDisk: false, completionHandler: nil)
 
                             dispatch_async_safely_to_queue(options.callbackDispatchQueue, { () -> Void in
@@ -423,7 +423,7 @@ extension ImageCache {
                 
                 if URLsToDelete.count != 0 {
                     let cleanedHashes = URLsToDelete.map({ (url) -> String in
-                        return url.lastPathComponent!
+                        return url.lastPathComponent
                     })
                     
                     NotificationCenter.default.post(name: KingfisherDidCleanDiskCacheNotification, object: self, userInfo: [KingfisherDiskCacheCleanedHashKey: cleanedHashes])
@@ -444,10 +444,7 @@ extension ImageCache {
         var URLsToDelete = [URL]()
         var diskCacheSize: UInt = 0
         
-        let resourceKeysString = resourceKeys.map { (key) -> String in
-            return key.rawValue
-        }
-        if let fileEnumerator = self.fileManager.enumerator(at: diskCacheURL, includingPropertiesForKeys: resourceKeysString, options: FileManager.DirectoryEnumerationOptions.skipsHiddenFiles, errorHandler: nil),
+        if let fileEnumerator = self.fileManager.enumerator(at: diskCacheURL, includingPropertiesForKeys: resourceKeys, options: FileManager.DirectoryEnumerationOptions.skipsHiddenFiles, errorHandler: nil),
             let urls = fileEnumerator.allObjects as? [URL] {
                 for fileURL in urls {
                     
@@ -613,7 +610,7 @@ extension ImageCache {
     
     func diskImageForKey(_ key: String, scale: CGFloat, preloadAllGIFData: Bool) -> Image? {
         if let data = diskImageDataForKey(key) {
-            return Image.kf_imageWithData(data, scale: scale, preloadAllGIFData: preloadAllGIFData)
+            return Image.kf_image(data: data, scale: scale, preloadAllGIFData: preloadAllGIFData)
         } else {
             return nil
         }

@@ -2,7 +2,7 @@ use_frameworks!
 
 target 'SPBZoomTransition_Example' do
   pod 'SPBZoomTransition', :path => '../'
-  pod 'Kingfisher', :git => 'https://github.com/onevcat/Kingfisher', :branch => 'swift3'
+  pod 'Kingfisher', :git => 'https://github.com/onevcat/Kingfisher', :branch => 'swift3', :commit => '585f035e1db1420fc9e6df2aa12ba628b5cf79e6'
 
   target 'SPBZoomTransition_Tests' do
     inherit! :search_paths
