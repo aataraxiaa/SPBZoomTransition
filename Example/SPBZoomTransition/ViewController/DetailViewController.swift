@@ -108,12 +108,7 @@ extension TableDatasource: UITableViewDataSource {
 typealias ZoomDestinationDelegate = DetailViewController
 extension ZoomDestinationDelegate: ZoomAnimatorDestinationDelegate {
     
-    func destinationFrame(direction: TransitionDirection) -> CGRect {
-        switch direction {
-        case .forward:
-            return CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.width)
-        case .back:
-            return imageView.convert(imageView.bounds, to: view)
-        }
+    func destinationFrame() -> CGRect {
+        return CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.width)
     }
 }

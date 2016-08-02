@@ -111,14 +111,11 @@ extension TransitionDelegate: UIViewControllerTransitioningDelegate {
 private typealias ZoomSourceDelegate = CollectionViewController
 extension ZoomSourceDelegate: ZoomAnimatorSourceDelegate {
     
-    func sourceView(direction: TransitionDirection) -> UIView {
-//        switch direction {
-//        case .forward:
-//            return selectedImageView.convert(selectedImageView.bounds, to: view)
-//        case .back:
-//            return selectedImageView.convert(selectedImageView.bounds, to: view)
-//        }
-        
+    func sourceImageView() -> UIImageView {
         return selectedImageView
+    }
+    
+    func sourceImageFrame() -> CGRect {
+        return selectedImageView.convert(selectedImageView.bounds, to: view)
     }
 }
