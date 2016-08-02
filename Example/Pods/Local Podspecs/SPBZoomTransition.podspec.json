@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "summary": "A short description of SPBZoomTransition.",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/<GITHUB_USERNAME>/SPBZoomTransition",
+  "homepage": "https://github.com/superpeteblaze/SPBZoomTransition",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,11 +12,12 @@
     "Pete Smith": "peadar81@gmail.com"
   },
   "source": {
-    "git": "https://github.com/<GITHUB_USERNAME>/SPBZoomTransition.git",
+    "git": "https://github.com/superpeteblaze/SPBZoomTransition.git",
     "tag": "0.1.0"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "9.0"
   },
-  "source_files": "SPBZoomTransition/Classes/**/*"
+  "source_files": "SPBZoomTransition/Classes/**/*.{swift}",
+  "frameworks": "UIKit"
 }

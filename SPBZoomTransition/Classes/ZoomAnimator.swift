@@ -55,11 +55,11 @@ final public class ZoomAnimator: NSObject, UIViewControllerAnimatedTransitioning
     public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         guard let sourceView = sourceDelegate?.sourceView(direction: transitionDirection),
             let destinationView = transitionContext.view(forKey: UITransitionContextToViewKey), let destinationFrame = destinationDelegate?.destinationFrame(direction: transitionDirection) else {
-                transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
+                transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
                 return
         }
         
-        let transitionContainer = transitionContext.containerView()
+        let transitionContainer = transitionContext.containerView
         
         //transitionContainer.insertSubview(destinationView, belowSubview: sourceView)
         
@@ -79,7 +79,7 @@ final public class ZoomAnimator: NSObject, UIViewControllerAnimatedTransitioning
                 self.sourceDelegate?.transitionDidEnd(direction: self.transitionDirection)
                 self.destinationDelegate?.transitionDidEnd(direction: self.transitionDirection)
                 
-                let completed = !transitionContext.transitionWasCancelled()
+                let completed = !transitionContext.transitionWasCancelled
                 transitionContext.completeTransition(completed)
         })
         
