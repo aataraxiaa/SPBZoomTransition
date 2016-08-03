@@ -24,11 +24,12 @@ public extension ZoomAnimatorDelegate {
 }
 
 public protocol ZoomAnimatorSourceDelegate: ZoomAnimatorDelegate {
-    func sourceView(direction: TransitionDirection) -> UIView
+    func sourceImageView() -> UIImageView
+    func sourceImageFrame() -> CGRect
 }
 
 public protocol ZoomAnimatorDestinationDelegate: ZoomAnimatorDelegate {
-    func destinationFrame(direction: TransitionDirection) -> CGRect
+    func destinationFrame() -> CGRect
 }
 
 final public class ZoomAnimator: NSObject, UIViewControllerAnimatedTransitioning {
@@ -53,36 +54,34 @@ final public class ZoomAnimator: NSObject, UIViewControllerAnimatedTransitioning
     }
     
     public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
-        guard let sourceView = sourceDelegate?.sourceView(direction: transitionDirection),
-            let destinationView = transitionContext.view(forKey: UITransitionContextToViewKey), let destinationFrame = destinationDelegate?.destinationFrame(direction: transitionDirection) else {
-                transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
-                return
+        
+        // Get the source image view
+        guard let sourceImageView = sourceDelegate?.sourceImageView(), let sourceImageFrame = sourceDelegate?.sourceImageFrame(), let destinationFrame = destinationDelegate?.destinationFrame() else {
+            transitionContext.completeTransition(true)
+            return
         }
         
-        let transitionContainer = transitionContext.containerView
+        // Get the container view, destination view, and what might be the actual destination
+        let containerView = transitionContext.containerView
+        let destinationEntireView = transitionContext.view(forKey: UITransitionContextToViewKey)!
+        let sourceEntireView = transitionContext.view(forKey: UITransitionContextFromViewKey)!
+        let detailView = transitionDirection == .forward ? destinationEntireView : sourceEntireView
         
-        //transitionContainer.insertSubview(destinationView, belowSubview: sourceView)
+        // Create a copy of the source image view
+        let sourceImageCopy = UIImageView(frame: sourceImageFrame)
+        sourceImageCopy.image = sourceImageView.image?.copy() as? UIImage
+        sourceEntireView.addSubview(sourceImageCopy)
         
-        sourceDelegate?.transitionWillBegin(direction: transitionDirection)
-        destinationDelegate?.transitionWillBegin(direction: transitionDirection)
-        
-        UIView.animate(
-            withDuration: duration,
-            delay: 0.0,
-            options: .curveEaseOut,
-            animations: {
-                sourceView.frame = destinationFrame
-            },
-            completion: { _ in
-                sourceView.removeFromSuperview()
-                
-                self.sourceDelegate?.transitionDidEnd(direction: self.transitionDirection)
-                self.destinationDelegate?.transitionDidEnd(direction: self.transitionDirection)
-                
-                let completed = !transitionContext.transitionWasCancelled
-                transitionContext.completeTransition(completed)
+        // Scale the source copy image view to the destination size
+        UIView.animate(withDuration: duration, delay: 0.0, options: .curveEaseIn, animations: {
+            sourceImageCopy.frame = destinationFrame
+        }, completion: {_ in
+            containerView.addSubview(destinationEntireView)
+            containerView.bringSubview(toFront: detailView)
         })
         
+        
+        // Always 'flip' the transition direction when we make a transition
         switch transitionDirection {
         case .forward:
             transitionDirection = .back
