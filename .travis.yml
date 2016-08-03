@@ -1,4 +1,4 @@
 language: objective-c
 osx_image: xcode8
 script:  
-  - xctool -project SPBBikeProvider.xcodeproj -scheme SPBBikeProvider -sdk iphonesimulator
+  - xctool -project Example/SPBZoomTransition.xcodeproj -scheme SPBZoomTransition-Example -sdk iphonesimulator
