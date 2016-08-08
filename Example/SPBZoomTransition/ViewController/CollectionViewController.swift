@@ -20,7 +20,7 @@ class CollectionViewController: UIViewController {
     
     // MARK: - Properties (Private)
     private var selectedImageView: UIImageView!
-    private lazy var zoomAnimator = ZoomAnimator()
+    private lazy var zoomAnimator = ZoomAnimator(duration: 0.3, damping: 0.3, springVelocity: 0.3)
     
     // MARK: - IBOutlets
     @IBOutlet weak var collectionView: UICollectionView!

@@ -39,14 +39,18 @@ final public class ZoomAnimator: NSObject, UIViewControllerAnimatedTransitioning
     public var destinationDelegate: ZoomAnimatorDestinationDelegate?
     
     // MARK: Properties (Private)
-    private var duration = 1.0      // Default animation duration of 1 second
+    private var duration = 0.3      // Default animation duration of 1 second
+    private var springVelocity: CGFloat = 0.0
+    private var damping: CGFloat = 0.0
     private var presenting = true   // Default initial value of presenting or dismissing
     private var transitionDirection = TransitionDirection.forward   // Default initial transition direction
     
-    convenience init(duration: Double) {
+    public convenience init(duration: Double, damping: CGFloat, springVelocity: CGFloat) {
         self.init()
         
         self.duration = duration
+        self.springVelocity = springVelocity
+        self.damping = damping
     }
 
     public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
@@ -72,8 +76,7 @@ final public class ZoomAnimator: NSObject, UIViewControllerAnimatedTransitioning
         sourceImageCopy.image = sourceImageView.image?.copy() as? UIImage
         sourceEntireView.addSubview(sourceImageCopy)
         
-        // Scale the source copy image view to the destination size
-        UIView.animate(withDuration: duration, delay: 0.0, options: .curveEaseIn, animations: {
+        UIView.animate(withDuration: duration, delay: 0.0, usingSpringWithDamping: damping, initialSpringVelocity: springVelocity, options: .curveEaseIn, animations: {
             sourceImageCopy.frame = destinationFrame
         }, completion: {_ in
             containerView.addSubview(destinationEntireView)
